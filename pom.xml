@@ -28,7 +28,7 @@
 		<url />
 	</scm>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>21</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -52,9 +52,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>3.4.4</version> <!-- Match with your spring-boot-starter
-				version -->
+				<version>3.4.4</version>
 			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.4.4</version>
+			</plugin>
+
 		</plugins>
 	</build>
 
