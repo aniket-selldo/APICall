@@ -27,6 +27,11 @@ public class JournalEntryController2 {
 		return new ArrayList<>(JournalEntry.values());
 	}
 	
+	@GetMapping("/size")
+	public long getsize(){
+		return JournalEntry.values().size();
+	}
+	
 	@PostMapping
 	public journalEntry createEntry(@RequestBody journalEntry je) {
 		JournalEntry.put(je.getId(), je);
@@ -53,6 +58,13 @@ public class JournalEntryController2 {
 	@DeleteMapping("id/{myId}")
 	public journalEntry deleteById(@PathVariable double myId){
 		return JournalEntry.remove(myId);
+	}
+	
+	@DeleteMapping("/clearall")
+	public String deleteAll(){
+		 long size = JournalEntry.values().size();
+		 JournalEntry.clear();
+		 return "DB Cleared, Record size is >> "+ size;
 	}
 	
 	@PutMapping("id/{myId}")
