@@ -194,6 +194,13 @@
 			<artifactId>opencsv</artifactId>
 			<version>4.1</version>
 		</dependency>
+
+		<!-- Override SLF4J provided by Spring Boot -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.30</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -202,15 +209,10 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.2.5</version>
-				<configuration>
-					<includes>
-						<include>DemoApplication.java</include>
-					</includes>
-				</configuration>
+				<version>3.5.3</version>
 			</plugin>
 		</plugins>
 	</build>
